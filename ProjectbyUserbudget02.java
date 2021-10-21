@@ -19,20 +19,22 @@ public class User{
 }
 
 class Project{
-    int id;
+    int Pid;
+    int Uid;
     String name;
     int budget;
     
-    public Project(int id,String name,int budget)
+    public Project(int Pid, int Uid,String name,int budget)
     {
-        this.id= id;
+        this.Pid = Pid;
+        this.Uid= Uid;
         this.name= name;
         this.budget=budget;
     }
     
     public String toString()
     {
-        return this.id + " " + this.name + " " + this.budget ;
+        return this.Pid + " " +  this.Uid + " " + this.name + " " + this.budget ;
     }
     
 }
@@ -70,8 +72,10 @@ class Test {
 	       }
 	       
 	       if(flag==1){
-	           Project p = new Project(l.id,l.name,l.salary);
+	           
+	           Project p = new Project((int)l.list.get(0).charAt(3),l.id,l.name,l.salary);
 	           map.get(l.list.get(0)).add(p);
+	           
 	       }
 	       flag=1;
 	       
